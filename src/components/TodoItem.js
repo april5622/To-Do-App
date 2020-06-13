@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 
 export class TodoItem extends Component {
+
     getStyle = () => {
         return {
             background: '#f4f4f4',
@@ -11,8 +12,7 @@ export class TodoItem extends Component {
             textDecoration: this.props.todo.completed ? 
             'line-through' : 'none'
         }
-    }
-
+    };
 
     render() {
         const { id, title } = this.props.todo;
@@ -20,14 +20,14 @@ export class TodoItem extends Component {
             <div style = {this.getStyle()}>
                 <p>
                     <input type='checkbox' 
-                    onChange={this.props.markComplete.bind(this, id)}
+                        onChange={this.props.markComplete.bind(this, id)}
                     /> {' '}
-                    {title}
+                        {title}
                     <button 
                         onClick={this.props.delTodo.bind(this, id)} 
                         style={btnStyle}>
-                            x
-                        </button>
+                        x
+                    </button>
                 </p>
             </div>
         )
